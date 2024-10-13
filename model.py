@@ -105,7 +105,7 @@ if sys.argv[1] == 'build' :
                 print('Batch {} Ended '.format(int(pointer / batch_size) + 1))
                 print('-----------------------------------------')
                 # increament batch pointer
-                pointer += 512
+                pointer += batch_size
 
             print('\ncalculating testing metrics ...')
             # concat results
@@ -176,23 +176,26 @@ if sys.argv[1] == 'build' :
 
 
 else :
-    df = pd.read_csv('../data/articles.csv')
-    print(df.info())
+    # df = pd.read_csv('../data/articles.csv')
+    # print(df.info())
     # df = df[df['index_group_name'] == 'Divided']
     # select the two relevant columns and drop duplicate rows
-    df = df.iloc[:,[2,19,24]]
+    # df = df.iloc[:,[2,19,24]]
     # drop row with null detail_desc values
-    df = df.dropna(subset='detail_desc')
-    print(df['index_group_name'].value_counts()/df.shape[0])
-    print(df['index_group_name'].value_counts())
+    # df = df.dropna(subset='detail_desc')
+    # print(df['index_group_name'].value_counts()/df.shape[0])
+    # print(df['index_group_name'].value_counts())
 
     # Loading model_metrics file
-    with open('model_metrics.pickle', 'rb') as handle:
-         print(pickle.load(handle))
+    # with open('model_metrics.pickle', 'rb') as handle:
+    #     print(pickle.load(handle))
 
-    # for i in range(df.shape[1]) :
-    #    print(df.columns[i])
-    #    print(df.iloc[523,i])
-    #    print('-----------------------------------------\n')
+    # (512, 50, 128)
 
+    x = np.random.rand(3,50,128)
+
+    y = torch.from_numpy(x)
+
+    print(y.shape)
+    print(y.mean(dim=1).shape)
     print('here ...')

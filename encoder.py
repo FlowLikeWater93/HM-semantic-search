@@ -46,6 +46,18 @@ class Encoder(torch.nn.Module):
 
 
 
+    def sentence_embedding(self, X):
+        # Pass to embedding layer
+        embeddings = self.embedding_layer(X)
+        # Generate positional encoding tensor
+        pe = self.positional_encoding(embeddings.shape[0], embeddings.shape[1], embeddings.shape[2])
+        # add to embeddings
+        embeddings_pe = embeddings + pe
+        # average word embeddings to generate sentence embedding
+        return embeddings_pe.mean(dim=1)
+
+
+
     def forward(self, X):
         # Pass to embedding layer
         embeddings = self.embedding_layer(X)
