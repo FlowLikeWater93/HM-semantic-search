@@ -176,26 +176,6 @@ if sys.argv[1] == 'build' :
 
 
 else :
-    # df = pd.read_csv('../data/articles.csv')
-    # print(df.info())
-    # df = df[df['index_group_name'] == 'Divided']
-    # select the two relevant columns and drop duplicate rows
-    # df = df.iloc[:,[2,19,24]]
-    # drop row with null detail_desc values
-    # df = df.dropna(subset='detail_desc')
-    # print(df['index_group_name'].value_counts()/df.shape[0])
-    # print(df['index_group_name'].value_counts())
-
     # Loading model_metrics file
-    # with open('model_metrics.pickle', 'rb') as handle:
-    #     print(pickle.load(handle))
-
-    # (512, 50, 128)
-
-    x = np.random.rand(3,50,128)
-
-    y = torch.from_numpy(x)
-
-    print(y.shape)
-    print(y.mean(dim=1).shape)
-    print('here ...')
+    with open('model_metrics.pickle', 'rb') as handle:
+        print(pickle.load(handle))
