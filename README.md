@@ -1,6 +1,6 @@
 # H&M-semantic-search
 <br>
-Goal of this project:<br>
+**Objective**<br>
 Implementing semantic search using data from the "H&M Personalized Fashion Recommendations" on <a href="https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations" target="blank">Kaggle</a>. In order to do so, we build a nlp classifer using the transformer encoder. Then, we use word embeddings from our model to generate sentence embeddings and perform semantic search
 <br><br>
 Please download the dataset from <a href="https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations" target="blank">Kaggle</a> before running the project source code. Unzip and place all csv files in a folder named "../data". The data was included in this repository due to its large size
