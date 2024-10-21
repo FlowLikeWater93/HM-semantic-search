@@ -1,6 +1,6 @@
 # H&M-semantic-search
 <br>
-### Goal of this project:
+Goal of this project:<br>
 Implementing semantic search using data from the "H&M Personalized Fashion Recommendations" on <a href="https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations" target="blank">Kaggle</a>. In order to do so, we build a nlp classifer using the transformer encoder. Then, we use word embeddings from our model to generate sentence embeddings and perform semantic search
 <br><br>
 Please download the dataset from <a href="https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations" target="blank">Kaggle</a> before running the project source code. Unzip and place all csv files in a folder named "../data". The data was included in this repository due to its large size
@@ -11,10 +11,7 @@ Semantic search can be used to retrieve items/documents from a large database th
 ## project files
 1- helpers.py :
 <br>Contains commonly used code snippets
-<br><br>
-Used to clean, standardize and Tokenize text sentences
-<br><br>
-import this file
+<br>Used to clean, standardize and Tokenize text sentences
 <br><br>
 ```
 import helpers
@@ -23,8 +20,6 @@ import helpers
 2- preprocess.py :
 <br>Generate vocabulary, initialize and save classifier model (option = 'init')
 <br>Generate training and testing datasets (option = 'train-test')
-<br><br>
-Navigate to the root directory
 <br><br>
 
 ```
@@ -36,8 +31,6 @@ python preprocess.py [option]
 <br>Use testing data to evaluate our model
 <br>Save model parametrs
 <br><br>
-Navigate to the root directory
-<br><br>
 
 ```
 python model.py build
@@ -48,8 +41,6 @@ python model.py build
 <br>Test semantic search on random items in the dataset (option = 'cluster') (option2 = <item_position:int>)
 <br>Test semantic search on random text queries (option = 'search') (option2 = <query:str>)
 <br><br>
-Navigate to the root directory
-<br><br>
 
 ```
 python semantic.py [option] [option2]
@@ -58,8 +49,6 @@ python semantic.py [option] [option2]
 5- encoder.py :
 <br>encoder model used to build our classifier and generate sentence embeddings
 <br><br>
-import encoder to build model
-<br><br>
 
 ```
 import encoder
@@ -67,14 +56,11 @@ import encoder
 <br>
 6- vocab.pickle :
 <br>Dictionary that maps all vocabulary words to unique numeric tokens
+<br>saved in a pickle file
 <br><br>
-saved in a pickle file
-<br><br>
-<br>
 7- model.pth :
 <br>Contains parameters of our final model and optimizer
 <br><br>
-<br>
 8- model_metrics.pickle :
 <br>Contains training loss, validation loss, accuracy and f1 scores of each epoch during our training/testing phase
 <br><br>
@@ -146,5 +132,5 @@ pip install nltk
 <br>
 
 ## Sources
-<a href="https://pytorch.org/get-started/locally/">torch download</a>
+<a href="https://pytorch.org/get-started/locally/">Installing torch</a>
 <br>
