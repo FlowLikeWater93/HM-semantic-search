@@ -65,7 +65,7 @@ else :
     # Train-Test split
     X_train, X_test, y_train, y_test = train_test_split(df.iloc[:,3], df.iloc[:,4], test_size=0.15, random_state=42)
 
-    # dave datasets
+    # save datasets
     X_train.to_csv('../data/x_train.csv', index=False)
     X_test.to_csv('../data/x_test.csv', index=False)
     y_train.to_csv('../data/y_train.csv', index=False)
