@@ -135,5 +135,6 @@ pip install nltk
 
 ## Sources
 <a href="https://www.mongodb.com/resources/basics/semantic-search">(1)Unlock the Power of Semantic Search with MongoDB Atlas Vector Search</a>
+<br>
 <a href="https://pytorch.org/get-started/locally/">(2)Installing torch</a>
 <br>
