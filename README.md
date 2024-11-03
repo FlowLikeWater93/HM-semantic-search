@@ -5,7 +5,9 @@ Implementing semantic search using data from the "H&M Personalized Fashion Recom
 <br><br>
 Please download the dataset from <a href="https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations" target="blank">Kaggle</a> before running the project source code. Unzip and place all csv files in a folder named "../data". The data was included in this repository due to its large size
 <br><br>
-Semantic search can be used to retrieve items/documents from a large database that have similar semantic meaning (similar sentence embeddings) to a search query. Let us take YOUTUBE as an example, when a user types a query in the search bar, we might use text query and find videos with descriptions that have similar semantic meaning (similar sentence embeddings). Another good example would be LinkedIn. We can use the description of a specific job post, find applicants/users that have headlines/bios with similar semantic meaning (similar sentence embeddings), finally recommend those users and vice versa.
+"Semantic search is not a mere buzzword; it's a game-changer in the way we retrieve information. Semantics is about the meaning of words and phrases and how they fit together. It surpasses traditional keyword-based searches by deciphering not only the meaning of what you say but also your intent, thanks to advanced technologies like natural language processing (NLP), machine learning (ML), knowledge graphs, and artificial intelligence."(1)
+<br><br>
+For example, On LinkedIn, we can match recruiters and potential candidates based on the semantic similarity between job descriptions and candidates’ career goals, skills and bios.
 <br><br>
 
 ## project files
@@ -132,5 +134,6 @@ pip install nltk
 <br>
 
 ## Sources
-<a href="https://pytorch.org/get-started/locally/">Installing torch</a>
+<a href="https://www.mongodb.com/resources/basics/semantic-search">(1)Unlock the Power of Semantic Search with MongoDB Atlas Vector Search</a>
+<a href="https://pytorch.org/get-started/locally/">(2)Installing torch</a>
 <br>

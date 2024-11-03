@@ -100,7 +100,7 @@ elif sys.argv[1] == 'cluster' :
     print('#### clustering ended ####')
 
 
-else :
+elif sys.argv[1] == 'search' :
     # load embeddings dataframe
     df_embeddings = pd.read_csv('../data/embeddings.csv')
     # convert embeddings to numpy
@@ -120,11 +120,11 @@ else :
     query = helpers.clean_text(query)
     query_tokens = helpers.tokenize([query], vocab)
 
-    query_embedding = model.sentence_embedding(torch.tensor(query_tokens, dtype=torch.int32)).detach().numpy()
-
-    # un-comment if you need to classify the query text
-    # prediction = model(torch.tensor(query_tokens, dtype=torch.int32))
-    # print(torch.argmax(prediction, dim=1))
+    with torch.no_grad():
+        query_embedding = model.sentence_embedding(torch.tensor(query_tokens, dtype=torch.int32)).detach().numpy()
+        # un-comment if you need to classify the query text
+        prediction = model(torch.tensor(query_tokens, dtype=torch.int32))
+        print(torch.argmax(prediction, dim=1))
 
     # calculate manhattan distance between every item and our target item
     manhattan_dist = []
@@ -140,3 +140,8 @@ else :
     # print top-5 items
     print(df_manhattan.iloc[:5, :])
     print('#### search ended ####')
+
+
+
+else :
+    print('here....')
