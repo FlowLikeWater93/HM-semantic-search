@@ -9,6 +9,8 @@ Please download the dataset from <a href="https://www.kaggle.com/competitions/h-
 <br><br>
 For example, On LinkedIn, we can match recruiters and potential candidates based on the semantic similarity between job descriptions and candidates’ career goals, skills and bios.
 <br><br>
+Another example would be finding similar products to recommend to a customer based on the description of products the customer already bought.
+<br><br>
 
 ## project files
 1- helpers.py :
@@ -65,6 +67,9 @@ import encoder
 <br><br>
 8- model_metrics.pickle :
 <br>Contains training loss, validation loss, accuracy and f1 scores of each epoch during our training/testing phase
+<br><br>
+9- semantic_kmeans.pickle :
+<br>kmeans model to lable sentence embeddings
 <br><br>
 
 ## Installations

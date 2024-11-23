@@ -8,7 +8,17 @@ import helpers
 from sklearn.metrics import confusion_matrix, accuracy_score
 
 
-if sys.argv[1] == 'build' :
+if len(sys.argv) == 1 :
+    print('########## Guide ##########')
+    print('1- python model.py build')
+    print('1.1- start the training process')
+    print('1.2- evaluate using the testing dataset')
+    print('1.3- save new model parameters and model metrics')
+    print('2- python model.py eval')
+    print('2.1- print model metrics')
+
+
+elif sys.argv[1] == 'build' :
     # Loading vocabulary
     with open('vocab.pickle', 'rb') as handle:
         vocab = pickle.load(handle)
@@ -174,8 +184,17 @@ if sys.argv[1] == 'build' :
     print('\n\nSaved progress successfully ....')
 
 
-
-else :
+elif sys.argv[1] == 'eval' :
     # Loading model_metrics file
     with open('model_metrics.pickle', 'rb') as handle:
         print(pickle.load(handle))
+
+
+else :
+    print('########## Guide ##########')
+    print('1- python model.py build')
+    print('1.1- start the training process')
+    print('1.2- evaluate using the testing dataset')
+    print('1.3- save new model parameters and model metrics')
+    print('2- python model.py eval')
+    print('2.1- print model metrics')

@@ -53,8 +53,10 @@ class Encoder(torch.nn.Module):
         pe = self.positional_encoding(embeddings.shape[0], embeddings.shape[1], embeddings.shape[2])
         # add to embeddings
         embeddings_pe = embeddings + pe
+        # Pass to transfomer encoder
+        encoder_output = self.transformer_encoder(embeddings)
         # average word embeddings to generate sentence embedding
-        return embeddings_pe.mean(dim=1)
+        return encoder_output.mean(dim=1)
 
 
 

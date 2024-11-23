@@ -7,7 +7,19 @@ import encoder
 from sklearn.model_selection import train_test_split
 
 
-if sys.argv[1] == 'init' :
+if len(sys.argv) == 1 :
+    print('########## Guide ##########')
+    print('1- python preprocess.py init')
+    print('1.1- Generates vocabulary dictionary')
+    print('1.2- Builds model and optimizer')
+    print('1.3- Saves vocabulary, model, optimizer and model metrics')
+    print('2- python preprocess.py train-test')
+    print('2.1- clean and prepare dataset')
+    print('2.2- train/test split')
+    print('2.3- save training and testing data')
+
+
+elif sys.argv[1] == 'init' :
     print('### Generating tokens and Creating Vocabulary ###')
     # load dataset of H&M products
     df = pd.read_csv('../data/articles.csv')
@@ -47,7 +59,7 @@ if sys.argv[1] == 'init' :
     print('### Done ###')
 
 
-else :
+elif sys.argv[1] == 'train-test' :
     print('### Saving training and testing data ###')
     # load dataset of H&M products
     df = pd.read_csv('../data/articles.csv')
@@ -70,5 +82,15 @@ else :
     X_test.to_csv('../data/x_test.csv', index=False)
     y_train.to_csv('../data/y_train.csv', index=False)
     y_test.to_csv('../data/y_test.csv', index=False)
-
     print('### Done ###')
+
+else :
+    print('########## Guide ##########')
+    print('1- python preprocess.py init')
+    print('1.1- Generates vocabulary dictionary')
+    print('1.2- Builds model and optimizer')
+    print('1.3- Saves vocabulary, model, optimizer and model metrics')
+    print('2- python preprocess.py train-test')
+    print('2.1- clean and prepare dataset')
+    print('2.2- train/test split')
+    print('2.3- save training and testing data')

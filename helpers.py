@@ -29,7 +29,7 @@ def clean_text(text):
     for i in range(len(broken_input)):
         output = output + ' ' + broken_input[i]
     # return final clean text
-    return output
+    return output[1:]
 
 
 def tokenize(text, vocab, max_seq_len=50):
